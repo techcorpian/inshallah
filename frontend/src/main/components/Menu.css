@@ -1,0 +1,56 @@
+  .container-logo {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-logo {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease, top 1s ease, right 1s ease; /* Transition for fade-in and movement */
+  }
+  
+  .fade-in-logo {
+    opacity: 1;
+  }
+  
+  .move-to-top-right {
+    animation: moveToTopLeft 1s ease forwards; /* Keyframe animation for smooth movement */
+  }
+  
+  @keyframes moveToTopLeft {
+    0% {
+      opacity: 0.5;
+      top: 50%;
+      left: 37%;
+      transform: translate(50%, -50%);
+    }
+  
+    100% {
+      opacity: 1;
+      top: 20px;
+      left: 30px;
+      transform: translate(0, 0);
+    }
+  }
+
+/* Mobile Responsive Part */
+    @media only screen and (max-width: 768px) {
+        /* Logo Animation move to top */
+        @keyframes moveToTopLeft {
+        0% {
+            opacity: 0.5;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        
+        100% {
+            opacity: 1;
+            top: 20px;
+            transform: translate(0, 0);
+        }
+        }
+    }

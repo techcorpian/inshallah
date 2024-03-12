@@ -1,0 +1,112 @@
+  .text-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* overlaying the content over background */
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white; /* Adjust text color as needed */
+    text-align: center;
+  }
+
+  .image-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background: linear-gradient(180deg, rgba(10, 13, 20, 0.8) 70.85%, rgba(61, 81, 122, 0) 121.94%);
+  
+  }
+
+  /* Text Animations */
+  .text {
+    opacity: 0;
+    font-size: 12px; /* Starting font size */
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  .fade-in-2 {
+    animation: fadeIn2 0.5s ease-in forwards;
+  }
+  
+  /* Fade-in Animation with font increase */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      font-size: 12px; /* Starting font size */
+    }
+    to {
+      opacity: 1;
+      font-size: 24px; /* Ending font size */
+    }
+  }
+
+  /* Fade-in Animation only */
+  @keyframes fadeIn2 {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .delay-1 {
+    animation-delay: 0.5s; /* Delay for text 1 */
+  }
+  
+  .delay-2 {
+    animation-delay: 1s; /* Delay for text 2 */
+  }
+  
+  .delay-3 {
+    animation-delay: 1.5s; /* Delay for text 3 */
+  }
+  
+  .fading-text {
+    transform: translate(-42%, 50%);
+    transition: top 1s ease, right 1s ease;
+  }
+  
+  .fading-text.move-to-top-right {
+    top: 10px;
+    right: 10px;
+  }
+
+/* Mobile Responsive Part */
+  @media only screen and (max-width: 768px) {
+  
+    .text-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* max yield content animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            font-size: 6px; /* Starting font size */
+        }
+        to {
+            opacity: 1;
+            font-size: 18px; /* Ending font size */
+        }
+    }
+
+  }
